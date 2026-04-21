@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Контракты пишем - код генерим: как мы перестали CRUDошлепить</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/rndphp/styles/styles.css">
+</head>
+<body class="shower list">
+<section class="slide">
+    <img src="pictures/preview.png" class=" cover"/>
+</section>
+
+<section class="slide">
+    <h2>О себе</h2>
+    <h3>Забанов Александр</h3>
+    <ul>
+        <li>Руководитель направления Backend в компании Веб<span style="color:#7927e0">/</span>Практик</li>
+        <li>10+ лет в backend</li>
+        <li><b>PHP</b> : Bitrix, Laravel, Symfony</li>
+        <li><b>NodeJS</b> : Nest, Express</li>
+        <li><b>Балуюсь</b> : Rust</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Веб<span style="color:#7927e0">/</span>практик</h2>
+    <div style="display: grid;grid-template-columns: repeat(5, 1fr);gap: 16px;">
+    <div class="style_runline_item__AH3St" style="width: 100px;" ><img alt="Центр инвест" loading="lazy" width="100" height="100"
+                                                decoding="async" data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fcenter.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fcenter.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fcenter.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Фонд развития теоритории" loading="lazy" width="100" height="100"
+                                                decoding="async" data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ffond.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ffond.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ffond.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Главстрой" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgalv.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgalv.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgalv.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Газпромнефть" loading="lazy" width="100" height="100"
+                                                decoding="async" data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgas.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgas.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgas.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="ГлавГосЭкспертиза" loading="lazy" width="100" height="100"
+                                                decoding="async" data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgge.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgge.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fgge.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Лукойл" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Flukoil.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Flukoil.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Flukoil.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Мос биржа" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fmoex.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fmoex.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fmoex.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="ОТП банк" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fotp.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fotp.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fotp.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Почта банк" loading="lazy" width="100" height="100"
+                                                decoding="async" data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fpochta.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fpochta.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fpochta.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="ПСБ" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fpsb.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fpsb.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fpsb.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="РосГосСтрах" loading="lazy" width="100" height="100"
+                                                decoding="async" data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Frgs.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Frgs.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Frgs.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Сколково" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fsk.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fsk.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fsk.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="СК10" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fsk10.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fsk10.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Fsk10.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Т1" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ft1.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ft1.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ft1.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+    <div class="style_runline_item__AH3St" style="width: 100px;"><img alt="Т-банк" loading="lazy" width="100" height="100" decoding="async"
+                                                data-nimg="1" class="style_runline_logo__ws1I_"
+                                                srcset="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ftbank.svg&amp;w=256&amp;q=75 1x, https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ftbank.svg&amp;w=640&amp;q=75 2x"
+                                                src="https://webpractik.ru/_next/image?url=https%3A%2F%2Fba5f0191-bf14-4ecb-8111-dfb7ed9d1e60.selstorage.ru%2Fimages%2Fsvg%2Frunline%2Ftbank.svg&amp;w=640&amp;q=75"
+                                                style="color: transparent;"></div>
+</div>
+</section>
+
+<section class="slide">
+    <h2>План</h2>
+    <ul>
+        <li class="next">Зачем нужен Pest - контекст и мотивация</li>
+        <li class="next">Синтаксис и Ключевые фичи</li>
+        <li class="next">Подводные камни</li>
+        <li class="next">Pest + AI - генерация тестов и AI-воркфлоу</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Что такое Pest?</h2>
+    <ul>
+        <li class="next">Построен поверх PHPUnit</li>
+        <li class="next">Вдохновлён Jest и RSpec</li>
+        <li class="next">Лицензия MIT, open-source</li>
+        <li class="next">Актуальная версия 4.6.3</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Почему важны тесты в эпоху AI-кодинга</h2>
+    <ul>
+        <li class="next">AI не понимает бизнес-контекст - он угадывает</li>
+        <li class="next">AI галлюцинирует - уверенно пишет неправильный код</li>
+        <li class="next">AI ломает архитектуру - кладёт файлы не туда, нарушает зависимости</li>
+        <li class="next">Код ревью не масштабируется - человек не успевает проверять всё</li>
+    </ul>
+</section>
+
+
+<section class="slide">
+    <h2>На примере</h2>
+    <p><b>TaskFlow:</b> SaaS для управления задачами</p>
+    <p style="font-size: 14px;/*! top: 101px; */margin-top: 315px;">PHP 8.3 • REST API плюс веб-интерфейс • Пять модулей: авторизация, проекты, задачи, уведомления, биллинг</p>
+</section>
+
+
+<section class="slide">
+    <h2>Стратегия тестирования: Пирамида</h2>
+    <img src="pictures/testing_pyramid.png" style="width: 80%;height: 80%;"/>
+</section>
+
+<section class="slide">
+    <h2>Стратегия тестирования: Кубок</h2>
+    <img src="pictures/testing_trophy.png" style="width: 80%;height: 80%;"/>
+</section>
+
+
+<section class="slide">
+    <h2>TaskFlow: Кубок</h2>
+    <ul>
+        <li class="next">Static (arch-тесты)     - 5 тестов, запуск < 1 сек</li>
+        <li class="next">Unit (бизнес-логика)     - ~200 тестов, мгновенно</li>
+        <li class="next">Integration (API, DB)    - ~80 тестов, < 30 сек</li>
+        <li class="next">E2E (browser)            - ~15 тестов, < 2 мин</li>
+        <br>
+        <li class="next">Mutation Testing          - поверх всего, проверяет качество</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Уровень 0: Static - Arch-тесты</h2>
+    <img src="pictures/arch.png" style="height: 76%;;margin-left: 203px;"/>
+</section>
+
+<section class="slide">
+    <h2>Уровень 1: Unit</h2>
+    <img src="pictures/unit.png" style="height: 76%;;margin-left: 214px;"/>
+</section>
+
+<section class="slide">
+    <h2>Уровень 2: Integration</h2>
+    <img src="pictures/integr.png" style="height: 79%;margin-left: 281px;"/>
+</section>
+
+<section class="slide">
+    <h2>Уровень 3: E2E - Browser Testing</h2>
+    <img src="pictures/e2e.png" style="height: 79%;margin-left: 215px;"/>
+</section>
+
+<section class="slide">
+    <h2>Mutation Testing - проверка качества</h2>
+    <p style="margin-left: 100px;">Класс "жертва"</p>
+    <img src="pictures/mutation_class.png" style="height: 43%;margin-left: -9px;position: absolute;/*! margin: ; */margin-top: -29px;"/>
+    <p style="/*! margin-left: 549px; *//*! margin-top: 100px; */position: absolute;top: 277px;left: 608px;">Тест к нему</p>
+    <img src="pictures/mutation.png" style="height: 33%;margin-left: 380px;margin-top: 105px;/*! padding-top: 100px; */"/>
+    <img src="pictures/mut_arrow.png" style="height: 43%;/*! margin-left: 151px; *//*! margin-top: -244px; */position: absolute;left: 175px;z-index: -9;top: 254px;"/>
+</section>
+
+<section class="slide">
+    <h2>Мутация 1: Арифметический оператор * → +</h2>
+    <img src="pictures/m_do_1.png" style="height: 20%;position: absolute;left: 36px;"/>
+    <span style="position: absolute;top: 242px;left: 237px;font-size: 16px;">До</span>
+    <img src="pictures/m_po_1.png" style="height: 20%;position: absolute;left: 502px;"/>
+    <span style="position: absolute;top: 242px;left: 682px;font-size: 16px;">После</span>
+    <p style="margin-top: 180px;">Что произойдёт при запуске теста:</p>
+    <ol style="font-size: 16px;">
+        <li>Ожидали: 3 * 100 - 10 = 290 ← тут у нас в тесте, кстати, ошибка: должно быть 290, а не 270. Но допустим, тест написан правильно.</li>
+        <li>Получим: 3 + 100 - 10 = 93</li>
+        <li>expect(93)->toBe(290) → тест упадёт ✓</li>
+        <li>Вердикт: Tested — мутация поймана</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>Мутация 2: Убрать return</h2>
+    <img src="pictures/m_do_2.png" style="height: 20%;position: absolute;left: 36px;"/>
+    <span style="position: absolute;top: 242px;left: 237px;font-size: 16px;">До</span>
+    <img src="pictures/m_po_2.png" style="height: 20%;position: absolute;left: 502px;"/>
+    <span style="position: absolute;top: 242px;left: 682px;font-size: 16px;">После</span>
+    <p style="margin-top: 180px;">Что произойдёт при запуске теста:</p>
+    <ol style="font-size: 16px;">
+        <li>Метод вернёт null вместо числа</li>
+        <li>В strict_types получим TypeError: must return int, null returned</li>
+        <li>Тест упадёт ✓ → Tested</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>Cкорость CI</h2>
+    <p style="font-size: 18px;margin-bottom: 1px;">Bash:</p>
+    <img src="pictures/ci1.png" style="height: 25%;">
+    <p style="font-size: 18px;margin-bottom: 1px;"">GitHub Actions для TaskFlow:</p>
+    <img src="pictures/ci2.png" style="height: 25%;">
+    <p style="font-size: 18px;margin-bottom: 1px;margin-left: 160px;"><b>12 мин → 2 мин.</b> Три джобы по 40 секунд вместо одной на 12 минут.</p>
+</section>
+
+<section class="slide">
+    <h2>Другие CLI-инструменты:</h2>
+    <img src="pictures/cli_another.png" style="height: 50%;">
+</section>
+
+<section class="slide">
+    <h2>Что под капотом плагинов</h2>
+    <table style="width: 111%;margin-left: -39px;font-size: 18px;">
+        <tr style="font-size: 22px;/*! font-stretch: initial; */background: aliceblue;">
+            <td>Плагин</td>
+            <td>Под капотом</td>
+            <td>Зачем</td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-browser</b></td>
+            <td>Playwright (Node.js) через PHP-bridge</td>
+            <td>E2E в реальных браузерах</td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-arch</b></td>
+            <td>nikic/php-parser (AST-анализ)</td>
+            <td>Разбирает PHP в дерево и проверяет правила</td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-drift</b>
+            </td>
+            <td>rector</td>
+            <td>Переписывает PHPUnit-классы в Pest-функции</td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-mutate</b>
+            </td>
+            <td>Собственный мутатор + кэш
+            </td>
+            <td>Модифицирует AST, запускает только нужные тесты
+            </td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-stressless</b>
+            </td>
+            <td>k6</td>
+            <td>Нагрузочное тестирование HTTP
+            </td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-faker</b>
+            </td>
+            <td>fakerphp/faker</td>
+            <td>Глобальная fake() без import</td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-snapshot</b>
+            </td>
+            <td>Файловое хранилище снапшотов
+            </td>
+            <td>Сериализация + diff при сравнении
+            </td>
+        </tr>
+        <tr>
+            <td><b>pest-plugin-profanity</b>
+            </td>
+            <td>Словари по языкам (9 языков, вкл. ru)
+            </td>
+            <td>Цензура
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide">
+    <h2 class="shout ">Подводные камни
+    </h2>
+</section>
+
+<section class="slide">
+    <h2>Named arguments (#1344) + пустые datasets (#1384 )
+    </h2>
+    <img src="pictures/p1.png" style="height: 30%;"/>
+    <br>
+    <img src="pictures/p2.png" style="height: 30%;margin-left: -8px;margin-top: 20px;"/>
+</section>
+
+<section class="slide">
+    <h2>Параллелизм и arch-тесты
+    </h2>
+    <p style="font-size: 16px;margin-bottom: 1px;">#1483:  --parallel молча фейлит в v4:</p>
+    <img src="pictures/p3.png" style="height: 30%;"/>
+    <br>
+    <p style="font-size: 16px;margin-bottom: 1px;">#1549: Arch-тесты игнорируют exclude из phpunit.xml:
+    </p>
+    <img src="pictures/p4.png" style="height: 30%;margin-left: -8px;margin-top: 20px;"/>
+</section>
+
+<section class="slide">
+    <h2>Browser Testing - молодая фича
+    </h2>
+    <ol>
+        <li>#1605: Навигация = silent crash. Процесс умирает без ошибки.</li>
+        <li>#1593: Субдомены не работают. Хост захардкожен в ServerManager.php.</li>
+        <li>#1443: Каждый visit() = новый контекст. Cookies/сессии не разделяются.</li>
+        <li>#1442: Coverage в v4 на 20% медленнее v3 (pcov).</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>Custom Expectations - свои проверки:
+    </h2>
+    <img src="pictures/ce.png" style="height: 50%;margin-left: -8px;margin-top: 20px;"/>
+</section>
+
+<section class="slide">
+    <h2>Conditional skip:
+    </h2>
+    <img src="pictures/ce2.png" style="height: 30%;margin-left: -8px;margin-top: 20px;"/>
+</section>
+
+<section class="slide">
+    <h2 class="shout ">AI + Pest: тесты в эпоху AI-кодинга
+    </h2>
+</section>
+
+<section class="slide">
+    <h2>Почему Pest хорош для AI-воркфлоу
+    </h2>
+    <table  style="width: 111%;margin-left: -39px;font-size: 18px;">
+        <tr style="font-size: 22px;/*! font-stretch: initial; */background: aliceblue;">
+            <td>Аспект</td>
+            <td>Как Pest помогает</td>
+        </tr>
+        <tr>
+            <td>Guardrails</td>
+            <td>Arch-тесты ловят нарушения архитектуры AI-кодом
+            </td>
+        </tr>
+        <tr>
+            <td>Визуальный контроль</td>
+            <td>it('validates email') - мгновенная проверка глазами
+            </td>
+        </tr>
+        <tr>
+            <td>Генерация</td>
+            <td>Лаконичный синтаксис → меньше токенов → точнее результат
+            </td>
+        </tr>
+        <tr>
+            <td>Качество</td>
+            <td>Mutation testing показывает пробелы в AI-тестах
+            </td>
+        </tr>
+        <tr>
+            <td>Скорость</td>
+            <td>AI генерирует 80% тестов → --mutate находит остальные 20%
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section class="slide">
+    <img src="pictures/tokens_terminal.png" style="height: 92%;">
+</section>
+
+<section class="slide">
+    <img src="pictures/tokens_chart.png" style="height: 92%;">
+</section>
+
+
+<section class="slide">
+    <h2> Pest vs PHPUnit
+    </h2>
+    <table style="width: 111%;margin-left: -39px;font-size: 18px;">
+        <tr style="font-size: 22px;/*! font-stretch: initial; */background: aliceblue;">
+            <td>Критерий</td>
+            <td>PHPUnit</td>
+            <td>Pest</td>
+        </tr>
+        <tr>
+            <td>Синтаксис</td>
+            <td>Классы, методы, $this->assert
+            </td>
+            <td>Функции it(), test(), expect()
+            </td>
+        </tr>
+        <tr>
+            <td>Expectation API
+            </td>
+            <td>Нет (только assert)
+            </td>
+            <td>Цепочки: expect()->toBe()->not->...
+            </td>
+        </tr>
+        <tr>
+            <td>Arch-тесты
+            </td>
+            <td>Нет
+            </td>
+            <td>Встроенные с пресетами
+            </td>
+        </tr>
+        <tr>
+            <td>Mutation Testing
+            </td>
+            <td>Отдельный Infection
+            </td>
+            <td>Встроенный --mutate
+            </td>
+        </tr>
+        <tr>
+            <td>Browser Testing
+            </td>
+            <td>Отдельный Dusk/Panther
+            </td>
+            <td>Встроенный плагин (Playwright)
+            </td>
+        </tr>
+        <tr>
+            <td>Datasets
+            </td>
+            <td>@dataProvider + отдельный метод
+            </td>
+            <td>->with([])
+            </td>
+        </tr>
+        <tr>
+            <td>Параллельность
+            </td>
+            <td>Paratest (отдельный пакет)
+            </td>
+            <td>--parallel из коробки
+            </td>
+        </tr>
+        <tr>
+            <td>Watch Mode
+            </td>
+            <td>Нет
+            </td>
+            <td>--watch
+            </td>
+        </tr>
+    </table>
+</section>
+
+
+<section class="slide">
+    <h2>Миграция: 3 шага
+    </h2>
+    <img src="pictures/migr.png" style="height: 80%;">
+</section>
+
+<section class="slide">
+    <h2>AI-скиллы для генерации Pest-тестов
+    </h2>
+    <p>Напиши Pest-тесты для [Класс/Сервис]:</p>
+    <ul>
+        <li>Стиль: expect() API, не $this->assert
+        </li>
+        <li>Формат: describe/it, BDD
+        </li>
+        <li>Datasets: для вариаций входных данных
+        </li>
+        <li>Покрытие: happy path + edge cases + negative</li>
+        <li>Arch: проверка зависимостей модуля</li>
+        <li>Указание: ->covers() для mutation testing</li>
+    </ul>
+    <img src="pictures/aiskill.png" style="position: absolute;top: 149px;left: 620px;height: 40%;">
+</section>
+
+
+<section class="slide">
+    <h2> Claude Code + Pest: полный цикл</h2>
+    <ol>
+        <li>Анализ     → Claude читает сервисы, модели, зависимости
+        </li>
+        <li>Генерация  → Pest-тесты с datasets, expect(), arch, covers()
+        </li>
+        <li>Запуск     → pest --parallel, видит ошибки, чинит сам</li>
+        <li>Мутации    → pest --mutate, дописывает недостающие</li>
+        <li>Coverage   → pest --coverage --min=80, финальная проверка</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2> Best Practices: AI + Pest
+    </h2>
+    <ul>
+        <li>Указывайте Pest-стиль (expect, не assert) в промтах
+
+        </li>
+        <li>Требуйте datasets для edge cases
+        </li>
+        <li>Проверяйте AI-тесты через --mutate
+        </li>
+        <li>Пишите arch-тесты до AI-генерации кода</li>
+        <li>Добавляйте ->covers() для mutation testing
+        </li>
+        <li>Не принимайте изменения без понимания
+        </li>
+    </ul>
+</section>
+
+
+<section class="slide">
+    <h2>Итоги</h2>
+    <ul style="font-size: 22px;">
+        <li>Тесты в эпоху AI - критическая инфраструктура, не опция</li>
+        <li>Pest покрывает все уровни "кубка" одним инструментом</li>
+        <li>Arch-тесты = guardrails для AI-кода - ставьте ДО генерации</li>
+        <li>Mutation testing > coverage - проверяйте качество, не количество
+        </li>
+        <li>AI + Pest = 80% тестов за минуты - но --mutate обязателен</li>
+        <li>Browser Testing v4 - мощно, но следите за issues
+        </li>
+        <li>Pest не про Laravel - он для любого PHP-проекта
+        </li>
+    </ul>
+
+    <p style="font-size: 14px;/*! top: 101px; */margin-top: 42px;margin-left: 393px;">pestphp.com  • github.com/pestphp/pest</p>
+
+</section>
+
+
+<section class="slide">
+    <h2>Вопросы</h2> 
+    <p>Презентация</p>    
+    <img src="pictures/" s/>
+</section>
+
+<section class="slide">
+    <h2 class="shout ">Конец</h2>
+</section>
+
+<div class="progress"></div>
+
+<script src="shower/shower.min.js"></script>
+
+</body>
+</html>
