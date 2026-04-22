@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Контракты пишем - код генерим: как мы перестали CRUDошлепить</title>
+    <title>Тесты в эпоху AI: Pest как последняя линия обороны</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="shower/themes/rndphp/styles/styles.css">
@@ -116,11 +116,17 @@
 
 <section class="slide">
     <h2>Что такое Pest?</h2>
+    <img src="pictures/pest_architecture.png" style="
+    position: absolute;
+    height: 50%;
+    top: 150px;
+    left: 450px;
+">
     <ul>
-        <li class="next">Построен поверх PHPUnit</li>
-        <li class="next">Вдохновлён Jest и RSpec</li>
-        <li class="next">Лицензия MIT, open-source</li>
-        <li class="next">Актуальная версия 4.6.3</li>
+        <li>Построен поверх PHPUnit</li>
+        <li>Вдохновлён Jest и RSpec</li>
+        <li>Лицензия MIT, open-source</li>
+        <li>Актуальная версия 4.6.3</li>
     </ul>
 </section>
 
@@ -445,24 +451,6 @@
 </section>
 
 <section class="slide">
-    <h2>AI-скиллы для генерации Pest-тестов
-    </h2>
-    <p>Напиши Pest-тесты для [Класс/Сервис]:</p>
-    <ul>
-        <li class="next">Стиль: expect() API, не $this->assert
-        </li>
-        <li class="next">Формат: describe/it, BDD
-        </li>
-        <li class="next">Datasets: для вариаций входных данных
-        </li>
-        <li class="next">Покрытие: happy path + edge cases + negative</li>
-        <li class="next">Arch: проверка зависимостей модуля</li>
-        <li class="next">Указание: ->covers() для mutation testing</li>
-    </ul>
-    <img  class="next" src="pictures/aiskill.png" style="position: absolute;top: 149px;left: 620px;height: 40%;">
-</section>
-
-<section class="slide">
     <h2> Best Practices: AI + Pest
     </h2>
     <ul>
@@ -479,6 +467,24 @@
         <li>Не принимайте изменения без понимания
         </li>
     </ul>
+</section>
+
+<section class="slide">
+    <h2>AI-скиллы для генерации Pest-тестов
+    </h2>
+    <p>Напиши Pest-тесты для [Класс/Сервис]:</p>
+    <ul>
+        <li class="next">Стиль: expect() API, не $this->assert
+        </li>
+        <li class="next">Формат: describe/it, BDD
+        </li>
+        <li class="next">Datasets: для вариаций входных данных
+        </li>
+        <li class="next">Покрытие: happy path + edge cases + negative</li>
+        <li class="next">Arch: проверка зависимостей модуля</li>
+        <li class="next">Указание: ->covers() для mutation testing</li>
+    </ul>
+    <img  class="next" src="pictures/aiskill.png" style="position: absolute;top: 149px;left: 620px;height: 40%;">
 </section>
 
 
