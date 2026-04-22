@@ -252,15 +252,6 @@ it('creates task via UI', function () {
 9. **Не добавляй `@test` аннотации** — Pest их не требует
 10. **Не пиши assert-методы PHPUnit** даже если они доступны через совместимость
 
----
 
-## Контакты и ресурсы
-
-- **Документация Pest:** https://pestphp.com
-- **Внутренний wiki:** `docs/testing-strategy.md`
-- **Slack-канал:** #taskflow-dev
-- **CODEOWNERS:** см. `.github/CODEOWNERS` для ревью тестов
-
----
 
 *Файл поддерживается командой. При изменении стратегии тестирования — обновляйте этот файл одновременно с `tests/Architecture/RulesTest.php`.*

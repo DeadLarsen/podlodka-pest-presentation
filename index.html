@@ -107,10 +107,10 @@
 <section class="slide">
     <h2>План</h2>
     <ul>
-        <li class="next">Зачем нужен Pest - контекст и мотивация</li>
-        <li class="next">Синтаксис и Ключевые фичи</li>
-        <li class="next">Подводные камни</li>
-        <li class="next">Pest + AI - генерация тестов и AI-воркфлоу</li>
+        <li>Зачем нужен Pest - контекст и мотивация</li>
+        <li>Синтаксис и Ключевые фичи</li>
+        <li>Подводные камни</li>
+        <li>Pest + AI - генерация тестов и AI-воркфлоу</li>
     </ul>
 </section>
 
@@ -156,12 +156,12 @@
 <section class="slide">
     <h2>TaskFlow: Кубок</h2>
     <ul>
-        <li class="next">Static (arch-тесты)     - 5 тестов, запуск < 1 сек</li>
-        <li class="next">Unit (бизнес-логика)     - ~200 тестов, мгновенно</li>
-        <li class="next">Integration (API, DB)    - ~80 тестов, < 30 сек</li>
-        <li class="next">E2E (browser)            - ~15 тестов, < 2 мин</li>
+        <li>Static (arch-тесты)     - 5 тестов, запуск < 1 сек</li>
+        <li>Unit (бизнес-логика)     - ~200 тестов, мгновенно</li>
+        <li>Integration (API, DB)    - ~80 тестов, < 30 сек</li>
+        <li>E2E (browser)            - ~15 тестов, < 2 мин</li>
         <br>
-        <li class="next">Mutation Testing          - поверх всего, проверяет качество</li>
+        <li>Mutation Testing          - поверх всего, проверяет качество</li>
     </ul>
 </section>
 
@@ -287,34 +287,18 @@
 </section>
 
 <section class="slide">
-    <h2>Named arguments (#1344) + пустые datasets (#1384 )
-    </h2>
-    <img src="pictures/p1.png" style="height: 30%;"/>
-    <br>
-    <img src="pictures/p2.png" style="height: 30%;margin-left: -8px;margin-top: 20px;"/>
+    <h2>Issue</h2>
+    <ul>
+        <li>#1344 Named arguments в  datasets</li>
+        <li>#1384 пустые datasets</li>
+        <li>#1483  --parallel молча фейлит в v4</li>
+        <li>#1549 Arch-тесты игнорируют exclude из phpunit.xml</li>
+        <li>#1605 Навигация = silent crash. Процесс умирает без ошибки.</li>
+        <li>#1593 Субдомены не работают. Хост захардкожен в ServerManager.php.</li>
+        <li>#1443 Каждый visit() = новый контекст. Cookies/сессии не разделяются.</li>
+    </ul>
 </section>
 
-<section class="slide">
-    <h2>Параллелизм и arch-тесты
-    </h2>
-    <p style="font-size: 16px;margin-bottom: 1px;">#1483:  --parallel молча фейлит в v4:</p>
-    <img src="pictures/p3.png" style="height: 30%;"/>
-    <br>
-    <p style="font-size: 16px;margin-bottom: 1px;">#1549: Arch-тесты игнорируют exclude из phpunit.xml:
-    </p>
-    <img src="pictures/p4.png" style="height: 30%;margin-left: -8px;margin-top: 20px;"/>
-</section>
-
-<section class="slide">
-    <h2>Browser Testing - молодая фича
-    </h2>
-    <ol>
-        <li>#1605: Навигация = silent crash. Процесс умирает без ошибки.</li>
-        <li>#1593: Субдомены не работают. Хост захардкожен в ServerManager.php.</li>
-        <li>#1443: Каждый visit() = новый контекст. Cookies/сессии не разделяются.</li>
-        <li>#1442: Coverage в v4 на 20% медленнее v3 (pcov).</li>
-    </ol>
-</section>
 
 <section class="slide">
     <h2>Custom Expectations - свои проверки:
