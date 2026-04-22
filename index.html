@@ -138,7 +138,7 @@
 <section class="slide">
     <h2>На примере</h2>
     <p><b>TaskFlow:</b> SaaS для управления задачами</p>
-    <p style="font-size: 14px;/*! top: 101px; */margin-top: 315px;">PHP 8.3 • REST API плюс веб-интерфейс • Пять модулей: авторизация, проекты, задачи, уведомления, биллинг</p>
+    <p style="font-size: 17px;/*! top: 101px; */margin-top: 10px;">PHP 8.3 • REST API плюс веб-интерфейс • Пять модулей: авторизация, проекты, задачи, уведомления, биллинг</p>
 </section>
 
 
@@ -171,23 +171,22 @@
 </section>
 
 <section class="slide">
-    <h2>Уровень 0: Static - Arch-тесты</h2>
-    <img src="pictures/arch.png" style="height: 76%;;margin-left: 203px;"/>
+    <img src="pictures/arch.png" style="height: 103%; position: absolute;top: -13px;left: 96px;"/>
 </section>
 
 <section class="slide">
     <h2>Уровень 1: Unit</h2>
-    <img src="pictures/unit.png" style="height: 76%;;margin-left: 214px;"/>
+    <img src="pictures/unit.png" style="height: 92%;position: absolute;left: 284px;top: 36px;"/>
 </section>
 
 <section class="slide">
     <h2>Уровень 2: Integration</h2>
-    <img src="pictures/integr.png" style="height: 79%;margin-left: 281px;"/>
+    <img src="pictures/integr.png" style="height: 98%;/*! margin-left: 357px; */position: absolute;top: 8px;left: 531px;"/>
 </section>
 
 <section class="slide">
     <h2>Уровень 3: E2E - Browser Testing</h2>
-    <img src="pictures/e2e.png" style="height: 79%;margin-left: 215px;"/>
+    <img src="pictures/e2e.png" style="height: 82%;/*! margin-left: 215px; */position: absolute;top: 100px;left: 200px;"/>
 </section>
 
 <section class="slide">
@@ -243,22 +242,12 @@
 </section>
 
 <section class="slide">
-    <h2>Что под капотом плагинов</h2>
+    <h2>Еще немного плагинов</h2>
     <table style="width: 111%;margin-left: -39px;font-size: 18px;">
         <tr style="font-size: 22px;/*! font-stretch: initial; */background: aliceblue;">
             <td>Плагин</td>
             <td>Под капотом</td>
             <td>Зачем</td>
-        </tr>
-        <tr>
-            <td><b>pest-plugin-browser</b></td>
-            <td>Playwright (Node.js) через PHP-bridge</td>
-            <td>E2E в реальных браузерах</td>
-        </tr>
-        <tr>
-            <td><b>pest-plugin-arch</b></td>
-            <td>nikic/php-parser (AST-анализ)</td>
-            <td>Разбирает PHP в дерево и проверяет правила</td>
         </tr>
         <tr>
             <td><b>pest-plugin-drift</b>
@@ -267,25 +256,11 @@
             <td>Переписывает PHPUnit-классы в Pest-функции</td>
         </tr>
         <tr>
-            <td><b>pest-plugin-mutate</b>
-            </td>
-            <td>Собственный мутатор + кэш
-            </td>
-            <td>Модифицирует AST, запускает только нужные тесты
-            </td>
-        </tr>
-        <tr>
             <td><b>pest-plugin-stressless</b>
             </td>
             <td>k6</td>
             <td>Нагрузочное тестирование HTTP
             </td>
-        </tr>
-        <tr>
-            <td><b>pest-plugin-faker</b>
-            </td>
-            <td>fakerphp/faker</td>
-            <td>Глобальная fake() без import</td>
         </tr>
         <tr>
             <td><b>pest-plugin-snapshot</b>
@@ -412,14 +387,14 @@
             <td>PHPUnit</td>
             <td>Pest</td>
         </tr>
-        <tr>
+        <tr  class="next">
             <td>Синтаксис</td>
             <td>Классы, методы, $this->assert
             </td>
             <td>Функции it(), test(), expect()
             </td>
         </tr>
-        <tr>
+        <tr  class="next">
             <td>Expectation API
             </td>
             <td>Нет (только assert)
@@ -427,7 +402,7 @@
             <td>Цепочки: expect()->toBe()->not->...
             </td>
         </tr>
-        <tr>
+        <tr class="next">
             <td>Arch-тесты
             </td>
             <td>Нет
@@ -435,7 +410,7 @@
             <td>Встроенные с пресетами
             </td>
         </tr>
-        <tr>
+        <tr class="next">
             <td>Mutation Testing
             </td>
             <td>Отдельный Infection
@@ -443,7 +418,7 @@
             <td>Встроенный --mutate
             </td>
         </tr>
-        <tr>
+        <tr class="next">
             <td>Browser Testing
             </td>
             <td>Отдельный Dusk/Panther
@@ -451,7 +426,7 @@
             <td>Встроенный плагин (Playwright)
             </td>
         </tr>
-        <tr>
+        <tr class="next">
             <td>Datasets
             </td>
             <td>@dataProvider + отдельный метод
@@ -459,7 +434,7 @@
             <td>->with([])
             </td>
         </tr>
-        <tr>
+        <tr class="next">
             <td>Параллельность
             </td>
             <td>Paratest (отдельный пакет)
@@ -467,7 +442,7 @@
             <td>--parallel из коробки
             </td>
         </tr>
-        <tr>
+        <tr class="next">
             <td>Watch Mode
             </td>
             <td>Нет
@@ -490,17 +465,17 @@
     </h2>
     <p>Напиши Pest-тесты для [Класс/Сервис]:</p>
     <ul>
-        <li>Стиль: expect() API, не $this->assert
+        <li class="next">Стиль: expect() API, не $this->assert
         </li>
-        <li>Формат: describe/it, BDD
+        <li class="next">Формат: describe/it, BDD
         </li>
-        <li>Datasets: для вариаций входных данных
+        <li class="next">Datasets: для вариаций входных данных
         </li>
-        <li>Покрытие: happy path + edge cases + negative</li>
-        <li>Arch: проверка зависимостей модуля</li>
-        <li>Указание: ->covers() для mutation testing</li>
+        <li class="next">Покрытие: happy path + edge cases + negative</li>
+        <li class="next">Arch: проверка зависимостей модуля</li>
+        <li class="next">Указание: ->covers() для mutation testing</li>
     </ul>
-    <img src="pictures/aiskill.png" style="position: absolute;top: 149px;left: 620px;height: 40%;">
+    <img  class="next" src="pictures/aiskill.png" style="position: absolute;top: 149px;left: 620px;height: 40%;">
 </section>
 
 
